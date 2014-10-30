@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<STYLE TYPE="text/css">
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+		th{
+			background-color: #0000ff;
+		}
+	</STYLE>
+</head>
+	<body>
+		<table style="width:100%">
+			<tr>
+				<th>Ejercicio</th> 
+				<th>RESULTAT</th>
+			</td>
+			<tr>
+				<td>
+					Resposta 2
+				</td>
+				<td>
+					<button onclick="ciutadaBCN2()">BCN</button>
+					<button onclick="ciutadaPAR2()">PAR</button>
+					<p id="bcn2"></p>
+					<script>
+						function ciutadaBCN2 (){
+							var joSocDe2="Barcelona";
+							document.getElementById("bcn2").innerHTML = "La meva ciutat es " + joSocDe2;
+						}
+						function ciutadaPAR2 (){
+							var joSocDe2="Paris";
+							document.getElementById("bcn2").innerHTML = "La meva ciutat es " + joSocDe2;
+						}
+					</script>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Resposta 3
+				</td>
+				<td>
+					<button onclick="ciutadaBCN3()">BCN</button>
+					<button onclick="ciutadaPAR3()">PAR</button>
+					<p id="bcn3"></p>
+					<script>
+						elMeuContinentEs3 = "Europa";
+						function ciutadaBCN3 (){
+							var joSocDe3="Barcelona";
+						document.getElementById("bcn3").innerHTML = "La meva ciutat es " + joSocDe3 + "<br>" + "El meu continent es " + elMeuContinentEs3;		
+						}
+						function ciutadaPAR3 (){
+							var joSocDe3="Paris";
+						document.getElementById("bcn3").innerHTML = "La meva ciutat es " + joSocDe3 + "<br>" + "El meu continent es " + elMeuContinentEs3;			
+						}
+					</script>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Resposta 5
+				</td>
+				<td>
+					<button onclick="ciutadaBCN5()">BCN</button>
+					<button onclick="ciutadaPAR5()">PAR</button>
+					<p id="bcn5"></p>
+					<script>
+						elMeuContinentEs5 = "Europa";
+						function ciutadaBCN5 (){
+							joSocDe5="Europa";
+							document.getElementById("bcn5").innerHTML = "La meva ciutat es " + joSocDe5 + "<br>" + "El meu continent es " + elMeuContinentEs5;
+						}
+						function ciutadaPAR (){
+							joSocDe5="Europa";
+							document.getElementById("bcn5").innerHTML = "La meva ciutat es " + joSocDe5 + "<br>" + "El meu continent es " + elMeuContinentEs5;
+						}
+					</script>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Resposta 7
+				</td>
+				<td>
+					<button onclick="ciutadaBCN7()">BCN</button>
+					<button onclick="ciutadaPAR7()">PAR</button>
+					<p id="bcn7"></p>
+					<script>
+						elMeuContinentEs7 = "Europa";
+						joSocDe7="";
+						function ciutadaBCN7 (){
+							if(joSocDe7=="Paris"){
+								document.getElementById("bcn7").innerHTML = "La meva ciutat es " + joSocDe7 + "<br>" + "El meu continent es " + elMeuContinentEs7;	
+							}
+							else{
+								joSocDe7="Barcelona";
+								document.getElementById("bcn7").innerHTML = "La meva ciutat es " + joSocDe7 + "<br>" + "El meu continent es " + elMeuContinentEs7;	
+							}	
+						}
+						function ciutadaPAR7 (){
+							if(joSocDe7=="Barcelona"){
+								document.getElementById("bcn7").innerHTML = "La meva ciutat es " + joSocDe7 + "<br>" + "El meu continent es " + elMeuContinentEs7;	
+							}
+							else{
+								joSocDe7="Paris";
+								document.getElementById("bcn7").innerHTML = "La meva ciutat es " + joSocDe7 + "<br>" + "El meu continent es " + elMeuContinentEs7;	
+							}
+						}
+					</script>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>	
