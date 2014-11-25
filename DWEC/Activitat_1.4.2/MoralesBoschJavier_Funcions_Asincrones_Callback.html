@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Funcions callback i asincrones</h1>
+	</br>
+	<h3>Como ha anat?</h3>
+	<h4>Personalmente la parte mas dificil de desarrollar a sido la de 
+		callbacks ya que es un concepto un poco lioso a la hora de ser desarrollado.</h4>
+	<h3>S'ha comportat el programa com esperaves? Si/No? </h3>
+	<h4>Cuando eh tenido claro el concepto ha realizado exactamente lo que buscaba aunque como eh dicho antes tambien has de tener los conceptos muy claros porque es facil pensar que realiza la funcion correcta y estar totalmente equivocado siendo mi caso.</h4>
+	<h3>Reflexiona sobre quins avantatges o aplicacio pratica podem trobar per les funcions amb callback.</h3>
+	<h4>El unico inconveniente que puedo verle es que pueda ser un tanto lioso a la hora de llevarlo acabo aunque si este fuese el caso la solucion seria no utilizarlo. En cambio, ventajas le veo bastantes y muy importantes, como por ejemplo los callbacks, los cuales nos permitirian tener un codigo propio y permitir a un desarroyador acceder a nuestro codigo para que pueda hacer uso de nuestras funciones y asi no tener que repetir codigo ni tener que hacer ningun tipo de modificacion. Es como dejar una puerta abierta a nuevas actualizaciones. Y por último las ventajas de las assincronas son evidentes, aunque en JS sea simulado con settimeout nos permite realizar funciones en segundo plano mientrar seguimos con al ejecucion de nuestro programa principal sin tener que limtiarnos asi a un seguimiento de acontecimientos sin poder modificar en absoluto el orden. </h4>
+	<h3>Presionaremos F12 para poder ver la console y empezaremos con las demostraciones de los distintos tipos de funciones.</h3>
+	<button onclick="classica()">funcion classica</button>
+	<button onclick="ambCallback()">funcion Callback</button>
+	<button onclick="assincrona()">funcion assincrona</button>
+	<p id="func"></p>
+	<script>
+		function principal(callbackAssincrono){
+			callbackAssincrono();
+		}
+		function primera(callback){
+			callback();
+		}
+		function segunda(){
+			console.log("\tEmpieza la ejecucion de la segunda()");
+			console.log("\tEntro al bucle llarg()");
+			for (i = 0; i < 1000000000; i++) { 
+			}
+			console.log("\tSurto del bucle llarg()");
+			console.log("\tAcaba la ejecucion de segunda()");
+		}
+		function tercera(){
+			console.log("\tEmpieza la ejecucion de la tercera()");
+			console.log("\tEntro al bucle llarg()");
+			for (i = 0; i < 1000000000; i++) { 
+			}
+			console.log("\tSurto del bucle llarg()");
+			console.log("\tAcaba la ejecucion de tercera()");
+		}
+		function quarta(){
+			console.log("\tEmpieza la ejecucion de la quarta()");
+			alert("ejecutando quarta")
+			console.log("\tAcaba la ejecucion de cuarta()");
+		}
+
+		function classica(){
+			console.log("Empieza la ejecucion de classica()");
+			console.log("Llamo a segunda() desde classica()");
+			segunda();
+			console.log("Acabo de llamar a segunda desde classica()");
+			console.log("Llamo a tercera() desde classica()");
+			tercera();
+			console.log("Acabo de llamar a tercera desde classica()");
+			console.log("Acaba la ejecucion de classica()");
+		}
+
+		function ambCallback(){
+			console.log("Empieza la ejecucion de ambCallback()");
+			primera(function(){
+				console.log("Llamo a segunda() o tercera () desde primera()");
+				switch(Math.floor((Math.random() * 2) + 1)) {
+				    case 1:
+				    	segunda();
+				        console.log("Acabo de llamar a segunda() desde primera()");
+				        break;
+				    case 2:
+				        tercera();
+				        console.log("Acabo de llamar a tercera() desde primera()");
+				        break;
+				    default:
+				    	console.log("Error");
+				    	break;
+				}
+			});
+			console.log("Acaba la ejecucion de ambCallback()");
+		}
+		
+		function assincrona(){
+			console.log("Empieza la ejecucion de assincrona()");
+			principal(function(){
+				console.log("Llamo a segunda() desde principal()");
+				console.log("Preparo el llançament de quarta()");
+				setTimeout(function(){
+					quarta();
+				},5000);
+				segunda();
+				console.log("Acabo de llamar a segunda() desde principal()");
+			});
+			console.log("Acaba la ejecucion de assincrona()");
+		}
+	</script>
+</body>
+</html>	
